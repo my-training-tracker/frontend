@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running commitlint..."
+if pnpm commitlint ${1}; then
+  echo "commitlint passed"
+  exit 0
+else
+  echo "commitlint failed"
+  exit 1
+fi
